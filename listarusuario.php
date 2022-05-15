@@ -48,9 +48,9 @@
         echo "<td><a href='alterarusuarioform.php?id=$id'><img src='.png alt='Atualizar' title='Editar Registro'></a></td>";
         echo "</br>";
         echo "</tr>";
-
+    }
         //BOTÃO PARA VOLTAR PARA O FORMULÁRIO DE CADASTRO / PÁGINA DE INÍCIO
         echo " <form>
         <button type ='submit' formaction='index.html'>Voltar ao cadastro</button>
             </form>";
-    }
+    

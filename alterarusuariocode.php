@@ -2,7 +2,7 @@
 //incluindo as validaçõees
 include_once "validacoes.php";
 //chamando a conexão
-require "conexao.php";
+require_once "conexao.php";
 
 //atribuindo as variáveis através do método post
 $id = $_POST['id'];
@@ -61,7 +61,7 @@ else{
             alert('Digite um Telefone Válido!');window.location ='alterarusuarioform.php'</script>";    
         }
         
-    }        
+    
         else{
 $sqlUpdate= "UPDATE usuario SET usuario_nome = '$nome', usuario_email = '$email', usuario_sobrenome = '$sobrenome', telefone = '$telefone' WHERE idusuario = $id";
 $result = mysqli_query($conexao, $sqlUpdate) or die ("Erro ao retornar dados");
@@ -75,8 +75,8 @@ echo"<script language='javascript' type='text/javascript'>
 else{
     echo"<script language='javascript' type='text/javascript'>
     alert('Erro!');window.location ='alterarusuarioform'</script>";
-}
+            }
         }
     }
-
+}
 ?>
