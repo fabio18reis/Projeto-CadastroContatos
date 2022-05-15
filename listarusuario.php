@@ -8,7 +8,7 @@
 
     //criando um formulário 
     echo "<meta charset='UTF-8'>";
-    echo "<center><table border=1>";
+    echo "<center><table <style border=1; border-collapse = collapse></style>";
     echo "<tr>";
     echo "<th>ID</th>";
     echo "<th>Nome</th>";
@@ -35,7 +35,7 @@
 
         //ADICIONANDO MAIS LINHAS E COLUNAS COM OS ITENS DO BANCOS ATRIBUÍDOS AS VARIÁVEIS
         //CONCATENANDO
-        echo "<tr>";
+        echo "<tr border = 1>";
         echo "<td>" . $id . "</td>";
         echo "<td>" . $nome . "</td>";
         echo "<td>" . $sobrenome . "</td>";
@@ -48,7 +48,9 @@
         echo "<td><a href='alterarusuarioform.php?id=$id'><img src='edita.png' alt='Atualizar' title='Editar' style width='40px'></a></td>";
         echo "</br>";
         echo "</tr>";
+        
     }
+    echo "</table>";
         //BOTÃO PARA VOLTAR PARA O FORMULÁRIO DE CADASTRO / PÁGINA DE INÍCIO
         echo " <form>
         <button type ='submit' formaction='index.html'>Voltar ao cadastro</button>
