@@ -121,7 +121,7 @@ $cpf = $registro['cpf'];
 </head>
 <body>
     <div>
-        <center><h1>Editar Cadastro</h1></center>
+        <center><h1>Editar Contato</h1></center>
        
         <form method="post" action="alterarusuariocode.php" name="dados" onSubmit="return enviardados();">
             <fieldset>
