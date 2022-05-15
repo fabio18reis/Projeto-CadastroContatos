@@ -1,4 +1,5 @@
 <?php
+//adicionando a conexão do banco de dados ao arquivo
     include_once "conexao.php";
 
 //efetuando comandos SQL e verificando através da query

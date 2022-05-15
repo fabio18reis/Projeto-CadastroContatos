@@ -1,7 +1,10 @@
 <?php 
+//incluindo as validaçõees
 include_once "validacoes.php";
+//chamando a conexão
 require "conexao.php";
 
+//atribuindo as variáveis através do método post
 $id = $_POST['id'];
 $nome = $_POST['nome'];
 $sobrenome = $_POST['sobrenome'];
@@ -20,18 +23,23 @@ FILTER_SANITIZE_NUMBER_FLOAT	);
 $telefone = filter_input(INPUT_POST, 'telefone',
 FILTER_SANITIZE_NUMBER_INT);
 
+//caso o usuário digite um caracter que não seja letra maiúscula ou minúscula, é substituído por espaço 
 $nome = preg_replace("/[^a-zA-Z]/", ' ' ,$nome);
+//é feito a mesma coisa para o campo de sobrenome
 $sobrenome = preg_replace("/[^a-zA-Z]/", ' ' ,$sobrenome);
   
     //Verificar se o usuário preencheu o campo
 if(empty($nome) or empty($sobrenome) or empty($cpf) or empty($email) or empty($telefone) or empty($sexo))
 {
+    //comando JS para exibir uma caixa de diálogo e redirecionando o usuário ao formulário de edição
     echo"<script language='javascript' type='text/javascript'>
         alert('Campo Vazio!!');window.location ='alterarusuarioform.php'</script>";     
 }
+//se não
 else{    
 //Verificar a existencia das variaveis
   if(isset($_POST['nome'])and isset($_POST['sobrenome']) and isset($_POST['cpf']) and isset($_POST['email']) and isset($_POST['telefone']) and isset($_POST['sexo'])){
+      //se o usuário preencher os campos é feito uma série de virificações
     if(!empty($_POST['nome']) or ($_POST['sobrenome']) or ($_POST['cpf']) or ($_POST['email']) or($_POST['telefone']) or ($_POST['sexo']))
     {
     

@@ -1,13 +1,20 @@
 <?php
+//adicionando conexâo do banco de dados ao arquivo
 require "conexao.php";
 
+//adicionando o ID utilizando o método get, pegando da URL
 $idusuario = $_GET['id'];
+
+//comando SQL para realizar a pesquisa de dados cadastrados, de acordo com o valor da variável idusuario, contendo o valor que veio da URL
 $sqlselect ="SELECT idusuario, cpf, usuario_nome, usuario_sobrenome, usuario_email, telefone, sexo FROM usuario WHERE idusuario = $idusuario";
 
+//query para verificar a conexão e o comando SQL
 $result = mysqli_query($conexao,$sqlselect);
 
+//adicionado os dados obtidos através do comando sql, em um array 
 $registro = mysqli_fetch_assoc($result);
 
+//adicionando cada um dos items do array em uma variável
 $id = $registro['idusuario'];
 $nome = $registro['usuario_nome'];
 $email = $registro['usuario_email'];
@@ -20,9 +27,11 @@ $cpf = $registro['cpf'];
 
 
 ?>
-
+<?php
+//FORMULÁRIO QUE ATRIBUI AS INFORMAÇÕES OBTIDAS PELO USUARIO NA LISTAGEM AOS RESPECTIVOS CAMPOS
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
