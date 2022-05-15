@@ -18,7 +18,7 @@
     echo "<th>CPF</th>";
     echo "<th>Sexo</th>";
     echo "<th>Deletar</th>";
-    echo "<th>Editar Registro</th>";
+    echo "<th>Editar</th>";
     echo "</tr>";
 
     //CONDIÇÃO QUE PERCORRE TODOS OS ITENS ARMAZENADOS NO BANCO E ARMAZENANDO NO ARRYA REGISTRO
@@ -44,8 +44,8 @@
         echo "<td>" . $cpf . "</td>";
         echo "<td>" . $sexo . "</td>";
         //LINKS QUE CHAMAM AS PÁGINAS DE EDITAR E DELETAR REGISTROS
-        echo "<td><a href='deletarusuario.php?id=$id'><img src='exc.png' alt='Deletar' title='Deletar registro'></a></td>";
-        echo "<td><a href='alterarusuarioform.php?id=$id'><img src='.png alt='Atualizar' title='Editar Registro'></a></td>";
+        echo "<td><a href='deletarusuario.php?id=$id'><img src='excluir.png' alt='Deletar' title='Deletar' style width='40px'></a></td>";
+        echo "<td><a href='alterarusuarioform.php?id=$id'><img src='edita.png' alt='Atualizar' title='Editar' style width='40px'></a></td>";
         echo "</br>";
         echo "</tr>";
     }
