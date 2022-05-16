@@ -23,8 +23,9 @@ FILTER_SANITIZE_NUMBER_FLOAT	);
 $telefone = filter_input(INPUT_POST, 'telefone',
 FILTER_SANITIZE_NUMBER_INT);
 
-//caso o usuário digite um caracter que não seja letra maiúscula ou minúscula, é substituído por espaço 
-$nome = preg_replace("/[^a-zA-Z]/", ' ' ,$nome);
+//caso o usuário digite um caracter que não seja letra maiúscula ou minúscula, é simplesmente apagado 
+$nome = preg_replace("/[^a-zA-Z]/", '' ,$nome);
+
 //é feito a mesma coisa para o campo de sobrenome
 $sobrenome = preg_replace("/[^a-zA-Z]/", ' ' ,$sobrenome);
   
@@ -44,21 +45,26 @@ else{
     {
     
         }
+        if($nome == false)
+        {
+            echo"<script language='javascript' type='text/javascript'>
+            alert('Operação Cancelada!Digite um Nome Válido!');window.location ='listarusuario.php'</script>";
+        }
        if(validaCPF($cpf) == false){
 
             echo"<script language='javascript' type='text/javascript'>
-            alert('Digite um CPF Válido!');window.location ='alterarusuarioform.php'</script>";   
+            alert('Operação Cancelada!Digite um CPF Válido!');window.location ='listarusuario.php'</script>";   
         }
 
         if(!validaremail($email)){
             echo"<script language='javascript' type='text/javascript'>
-            alert('Digite um Email Válido!');window.location ='alterarusuarioform.php'</script>";    
+            alert('Operação Cancelada!Digite um Email Válido!');window.location ='listarusuario.php'</script>";    
         }
 
         if(validatelefone($telefone) == false)
         {
             echo"<script language='javascript' type='text/javascript'>
-            alert('Digite um Telefone Válido!');window.location ='alterarusuarioform.php'</script>";    
+            alert('Operação Cancelada!Digite um Telefone Válido!');window.location ='listarusuario.php'</script>";    
         }
         
     
