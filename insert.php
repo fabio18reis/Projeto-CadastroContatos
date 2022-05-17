@@ -1,4 +1,7 @@
 <?php
+
+use function PHPSTORM_META\type;
+
 require_once "conexao.php";
 include_once "validacoes.php";
 
@@ -26,12 +29,49 @@ $nome = preg_replace("/[^a-zA-Z]/", '' ,$nome);
 $sobrenome = preg_replace("/[^a-zA-Z]/", '' ,$sobrenome);
   
     //Verificar se o usuário preencheu o campo
-if(empty($nome) or empty($sobrenome) or empty($cpf) or empty($email) or empty($telefone) or empty($sexo))
+if(empty($nome) and empty($sobrenome) and empty($cpf) and empty($email) and empty($telefone) and empty($sexo))
 {
     //script JS para exibir caixa de diálogo de confirmação
     echo"<script language='javascript' type='text/javascript'>
-        alert('Campo Vazio!!');window.location ='index.html'</script>";     
+        alert('Preencha os Campos!!');window.location ='index.html'</script>"; 
 }
+        if(empty($nome))
+        {
+            echo"<script language='javascript' type='text/javascript'>
+        alert('Digite seu Nome!!');window.location ='index.html'</script>"; 
+        }
+        elseif(empty($sobrenome))
+        {
+            echo"<script language='javascript' type='text/javascript'>
+        alert('Digite Seu Sobrenome!!');window.location ='index.html'</script>"; 
+        }
+        elseif(empty($cpf))
+        {
+            echo"<script language='javascript' type='text/javascript'>
+        alert('CPF Vazio!!');window.location ='index.html'</script>"; 
+        }
+        elseif(empty($email))
+        {
+            echo"<script language='javascript' type='text/javascript'>
+        alert('Digite seu Email!!');window.location ='index.html'</script>"; 
+        }
+        elseif(empty($telefone))
+        {
+            echo"<script language='javascript' type='text/javascript'>
+        alert('Telefone Vazio!!');window.location ='index.html'</script>"; 
+        }
+        elseif(empty($sexo))
+        {
+            echo"<script language='javascript' type='text/javascript'>
+        alert('Sexo Vazio!!');window.location ='index.html'</script>"; 
+        }
+       /* elseif(empty($nome) and empty($sobrenome) and empty($cpf) and empty($email) and empty($telefone) and empty($sexo))
+        {
+             //script JS para exibir caixa de diálogo de confirmação
+              echo"<script language='javascript' type='text/javascript'>
+                 alert('Campo Vazio!!');window.location ='index.html'</script>"; 
+        }*/
+
 else{    
 //Verificar a existencia das variaveis
   if(isset($_POST['nome'])and isset($_POST['sobrenome']) and isset($_POST['cpf']) and isset($_POST['email']) and isset($_POST['telefone']) and isset($_POST['sexo'])){
