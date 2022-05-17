@@ -2,12 +2,14 @@
 //adicionando a conexão do banco de dados ao arquivo
 include_once "conexao.php";
 
+
+//variável que armazena oq o usuário digitou no campo de pesquisa
+$nomepesquisa = $_POST['pesquisar'];
+
 if (empty($nomepesquisa)) {
     echo "<script language='javascript' type='text/javascript'>
         alert('Digite um nome para pesquisar um indice');window.location ='listarusuario.php'</script>";
 }
-//variável que armazena oq o usuário digitou no campo de pesquisa
-$nomepesquisa = $_POST['pesquisar'];
 //efetuando comandos SQL e verificando através da query
 $sqlSelectButton = "SELECT idusuario, cpf, usuario_nome, usuario_sobrenome, usuario_email, telefone, sexo FROM usuario WHERE usuario_nome LIKE '$nomepesquisa'";
 $result = mysqli_query($conexao, $sqlSelectButton) or die("Erro ao retornar dados");

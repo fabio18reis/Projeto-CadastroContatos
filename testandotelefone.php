@@ -1,5 +1,5 @@
 <?php
-
+/*
 //recebendo os dados de telefone do formulário
 
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
@@ -15,4 +15,4 @@ if(!empty($dados['cadastrar'])) {
 
         $rs = mysqli_query($conexao, $sqlInserttelefone) or die("Erro ao cadastrar dados");
 
-}
+}*/

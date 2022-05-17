@@ -16,8 +16,9 @@ if(!(mysqli_query($conexao,$sqlDel)))
 
 //comando JS para exibir caixa de diálogo que é exibido quando o usuário é deletado
 echo"<script language='javascript' type='text/javascript'>
+    
     alert('Usuário Deletado!');window.location ='listarusuario.php'</script>";
 
     //fecha a conexão
 mysqli_close($conexao);
-?>
+?>  ''
