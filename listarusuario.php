@@ -5,9 +5,9 @@
 //efetuando comandos SQL e verificando através da query
     $sqlSelect = "SELECT idusuario, cpf, usuario_nome, usuario_sobrenome, usuario_email, telefone, sexo FROM usuario";
     $result = mysqli_query($conexao, $sqlSelect) or die ("Erro ao retornar dados");
-
     //criando um formulário 
     echo "<meta charset='UTF-8'>";
+    echo "<center><h1>Contatos<?h1></center>";
     echo "<center><table <style border=1; border-collapse = collapse></style>";
     echo "<tr>";
     echo "<th>ID</th>";
@@ -20,8 +20,16 @@
     echo "<th>Deletar</th>";
     echo "<th>Editar</th>";
     echo "</tr>";
-
-    //CONDIÇÃO QUE PERCORRE TODOS OS ITENS ARMAZENADOS NO BANCO E ARMAZENANDO NO ARRYA REGISTRO
+ ?>
+     <form method="post" name="pesquisa" onSubmit="return enviardados();" action="pesquisausuario.php">
+            <label for="pesquisa" style="font-size: 25px;">Pesquisar:</label>
+            <input type='text' name= 'pesquisar' id='pesquisar' autocomplete ='off' maxlenght = '80' placeholder= 'Digite o Nome Desejado'>
+            <button type ='submit' formaction='pesquisausuario.php'>Pesquisar</button>
+     </form>
+   
+    
+   <?php
+   //CONDIÇÃO QUE PERCORRE TODOS OS ITENS ARMAZENADOS NO BANCO E ARMAZENANDO NO ARRYA REGISTRO
     while($registro = mysqli_fetch_array($result))
     {
         //ATRIBUINDO UM ITEM DO ARRAY A UMA VARIÁVEL 
@@ -55,4 +63,5 @@
         echo " <form>
         <button type ='submit' formaction='index.html'>Voltar ao cadastro</button>
             </form>";
+    
     

@@ -34,7 +34,7 @@ if(empty($nome) or empty($sobrenome) or empty($cpf) or empty($email) or empty($t
 {
     //comando JS para exibir uma caixa de diálogo e redirecionando o usuário ao formulário de edição
     echo"<script language='javascript' type='text/javascript'>
-        alert('Campo Vazio!!');window.location ='alterarusuarioform.php'</script>";     
+        alert('Campo vazio, cancelando operação!!');window.location ='listarusuario.php'</script>";     
 }
 //se não
 else{    

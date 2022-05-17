@@ -1,130 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <script>
-        function mascaracpf(){
+        function mascaracpf() {
             var cpf = document.getElementById('cpf')
-            if(cpf.value.length == 3 || cpf.value.length == 7)
-            {
-                cpf.value+= "."
+            if (cpf.value.length == 3 || cpf.value.length == 7) {
+                cpf.value += "."
             }
-            else if(cpf.value.length == 11)
-            {
-            cpf.value+= "."
+            else if (cpf.value.length == 11) {
+                cpf.value += "."
             }
         }
-        
+
     </script>
     <style>
-    input[type=text], select
-     {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid rgb(0, 4, 254);
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-    input[type=number], select
-     {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid rgb(0, 4, 254);
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid rgb(0, 4, 254);
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
 
-    input[type=e-mail], select
-     {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid rgb(0, 4, 254);
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
+        input[type=number],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid rgb(0, 4, 254);
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
 
-    button{
-     width: 20%;
-     background-color: #ff0909;
-     color: white;
-     padding: 14px 20px;
-     margin: 8px 0;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
-}
+        input[type=e-mail],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid rgb(0, 4, 254);
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
 
-fieldset
-{
-  background-color:rgb(38, 78, 104);
-    border:2px solid rgb(12, 112, 193);
-    -moz-border-radius:8px;
-    -webkit-border-radius:8px;	
-    border-radius:8px;	
-}
-legend,h1
-{
-    font-family: 'Bebas Neue', cursive;
-      font-size: 30px;
-      margin-bottom:0px;
-      margin-left:16px;
-      border:2px solid rgb(0, 0, 0);
-      background-color: azure;
-      width: 27%;
-      justify-content: center;
-}
+        button {
+            width: 20%;
+            background-color: #ff0909;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-label{
-    font-size: 18px;
-    font-family: 'Koulen', cursive;
-    color: azure;
-}
+        fieldset {
+            background-color: rgb(38, 78, 104);
+            border: 2px solid rgb(12, 112, 193);
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            border-radius: 8px;
+        }
 
-        </style>
+        legend,
+        h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 30px;
+            margin-bottom: 0px;
+            margin-left: 16px;
+            border: 2px solid rgb(0, 0, 0);
+            background-color: azure;
+            width: 27%;
+            justify-content: center;
+        }
+
+        label {
+            font-size: 18px;
+            font-family: 'Koulen', cursive;
+            color: azure;
+        }
+    </style>
     <title>Cadastrar</title>
 </head>
+
 <body>
     <div>
-        <center><h1>Cadastro de Contatos</h1></center>
-       
+        <center>
+            <h1>Cadastro de Contatos</h1>
+        </center>
+
         <form method="post" action="insert.php" name="dados" onSubmit="return enviardados();">
             <fieldset>
-             <legend>Realize seu cadastro abaixo</legend>
+                <legend>Realize seu cadastro abaixo</legend>
                 <div>
                     <label for="nome" required style="font-size: 25px;">Nome:</label>
                     <br>
-                    <input type="text" name= "nome" id="nome" autocomplete ="off" maxlenght = "80" placeholder= "Digite seu Nome">
+                    <input type="text" name="nome" id="nome" autocomplete="off" maxlenght="80"
+                        placeholder="Digite seu Nome">
                 </div>
                 <div>
                     <label for="sobrenome" required style="font-size: 25px;">Sobrenome:</label>
                     <br>
-                    <input type="text" name="sobrenome" id="sobrenome" autocomplete ="off" maxlenght = "80" placeholder= "Digite seu Sobrenome">
+                    <input type="text" name="sobrenome" id="sobrenome" autocomplete="off" maxlenght="80"
+                        placeholder="Digite seu Sobrenome">
                 </div>
                 <div>
                     <label for="cpf" required style="font-size: 25px;">CPF:</label>
                     <br>
-                    <input type="text" name="cpf" id="cpf" maxlength="14" onkeyup="mascaracpf()"  autocomplete ="off" maxlenght = "14" placeholder= "Digite somente os Numeros do CPF">
+                    <input type="text" name="cpf" id="cpf" maxlength="14" onkeyup="mascaracpf()" autocomplete="off"
+                        maxlenght="14" placeholder="Digite somente os Numeros do CPF">
                 </div>
                 <div>
                     <label for="email" required style="font-size: 25px;">Email:</label>
                     <br>
-                    <input type="e-mail" name="email" id="email"  autocomplete ="off"  placeholder= "Digite seu Email">
+                    <input type="e-mail" name="email" id="email" autocomplete="off" placeholder="Digite seu Email">
                 </div>
                 <div>
                     <label for="telefone" required style="font-size: 25px;">Telefone:</label>
                     <br>
-                    <input type="number" name="telefone" id="telefone"  autocomplete ="off" maxlenght = "12" placeholder= "Digite o Numero do seu Telefone">
+                    <input type="number" name="telefone" id="telefone" autocomplete="off" maxlenght="12"
+                        placeholder="Digite o Numero do seu Telefone">
                 </div>
                 <div>
                     <label for="sexo" required style="font-size: 25px;">Sexo:</label>
@@ -137,21 +143,22 @@ label{
                 <br>
                 <div>
                     <span>
-                    <button type="submit">Cadastrar</button>
+                        <button type="submit">Cadastrar</button>
                     </span>
                     <span>
-                        <button type ="reset">Limpar Campos</button>
+                        <button type="reset">Limpar Campos</button>
                     </span>
                     <span>
-                        <button type ="submit" formaction="listarusuario.php">Consultar</button>
+                        <button type="submit" formaction="listarusuario.php">Consultar</button>
                     </span>
                 </div>
             </fieldset>
 
-           
+
         </form>
-        
+
     </div>
-    
+
 </body>
+
 </html>

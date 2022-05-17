@@ -4,9 +4,8 @@ function validaCPF($cpf = null) {
 if(empty($cpf)) {
     return false;
 }
-// Extrai somente os números
-// $cpf = preg_replace( '/[^0-9]/is', '', $cpf );
-// Elimina possivel mascara
+
+// Elimina mascara
 $cpf = preg_replace('/[^0-9]/', '', $cpf);
 $cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
  
@@ -70,5 +69,3 @@ function validatelefone($telefone)
         return true;
     }
  }
-
-?>
