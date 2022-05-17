@@ -8,3 +8,4 @@ include_once "conexao.php";
 
 //fechando a conexão
 mysqli_close($conexao);
+?>

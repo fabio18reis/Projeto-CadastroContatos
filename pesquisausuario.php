@@ -72,3 +72,4 @@ echo "</table>";
 echo " <form>
         <button type ='submit' formaction='listarusuario.php'>Voltar</button>
             </form>";
+?>

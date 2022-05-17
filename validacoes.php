@@ -69,3 +69,4 @@ function validatelefone($telefone)
         return true;
     }
  }
+?>

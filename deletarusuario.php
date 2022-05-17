@@ -20,3 +20,4 @@ echo"<script language='javascript' type='text/javascript'>
 
     //fecha a conexão
 mysqli_close($conexao);
+?>
