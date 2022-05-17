@@ -134,7 +134,7 @@ $cpf = $registro['cpf'];
        
         <form method="post" action="alterarusuariocode.php" name="dados" onSubmit="return enviardados();">
             <fieldset>
-             <legend>EDITAR</legend>
+             <legend>Editar</legend>
                 <div>
                     <label for="nome" required style="font-size: 25px;">ID:</label>
                     <input type="text" readonly name= "id" id="id" value="<?php echo "$id"; ?>">
